@@ -1,0 +1,46 @@
+{%extends 'base.html'%}
+{% load static %}
+
+{% include 'navbar.html' %}
+	{% block content %}
+	<div class='row mt-4'>
+		<div class='column'>
+			<span class="d-block p-2 bg-dark text-white mb-2">Enter your to do list item here: </span>
+			<!-- <h2> To do list item </h2> -->
+			<form action='.', method="POST" class="form-inline">{% csrf_token %} 
+				<div class="row mb-3 align-items-center">
+				  	<div class="col-auto ">
+				    <label class="col-auto col-form-label mb-2">Task:</label>
+				    </div> <!-- for="inputEmail3" --> 
+
+			    	<div class="col-auto ">
+			      <input type="text" name='content' class="form-control mb-2" id="newtask" placeholder="Your new task here..">
+			    	</div>
+				  	
+				  <div class="col-auto" >
+		  			<button type="submit" class="btn btn-primary mb-2">Add</button>
+		  		  </div>
+		  		</div>
+			</form>
+		</div>
+	</div>
+	
+	<div class='row mt-4'>
+		<div class='column'>
+			<ul class="list-group">
+				{% for item in object_list %}
+		  <!-- <li class="list-group-item" aria-current="true">An active item</li> -->
+		  <li class="list-group-item">{{item.text}} - Created On: {{item.added_date}} 
+		  		<div class="pullquote" style="float:right !important;" >
+		  			<form action="delete_todo/{{item.id}}" >
+		  		<button type="submit" class="btn btn-sm btn-danger float-right">Delete</button>
+		  		 	</form>
+		  		</div>
+		 
+		  </li>
+		  	{% endfor %}
+			</ul>
+		</div>
+	</div>
+
+{% endblock %}
