@@ -1,6 +1,7 @@
 from django.contrib.auth.models import User
 from django.urls import reverse
 from django.test import TestCase
+from django.core import mail
 
 class PasswordResetMailTests(TestCase):
     def setUp(self):
@@ -9,7 +10,7 @@ class PasswordResetMailTests(TestCase):
         self.email = mail.outbox[0]
 
     def test_email_subject(self):
-        self.assertEqual('To Do List] Please reset your password, self.email.subject)
+        self.assertEqual('[To Do List] Please reset your password', self.email.subject)
 
     def test_email_body(self):
         context = self.response.context
