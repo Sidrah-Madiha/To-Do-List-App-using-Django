@@ -12,7 +12,7 @@ https://www.loom.com/share/e1e37a9a6ea949ae95dc4f6d9ccf115e?sharedAppSource=pers
 ![UI_first_image](static/img/ListofItemsUI.png)
 
 **Screen for deleting item from to do list:**
-![UI_first_image](static/img/DeleteitemUI.png.png)
+![UI_first_image](static/img/DeleteitemUI.png)
 
 ### Video Screencast for user authentication:
 https://www.loom.com/share/207124a07fd24e849a6c2eb5df23ce28
